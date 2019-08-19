@@ -5,7 +5,7 @@ output "admin_username" {
 
 output "windows_passwords" {
   description = "Windows admin password"
-  value       = ["${azurerm_virtual_machine.windows_instance.os_profile.*.admin_password}"]
+  value       = ["${random_password.password.*.result}"]
 }
 
 output "private_ips" {
